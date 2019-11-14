@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         mUpgradeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MainActivity.this, "启动下载任务...", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, getString(R.string.start_download_task), Toast.LENGTH_SHORT).show();
 
                 Intent intent = new Intent(MainActivity.this, DownloadService.class);
                 intent.putExtra(Constant.APK_DOWNLOAD_URL, Constant.URL);
