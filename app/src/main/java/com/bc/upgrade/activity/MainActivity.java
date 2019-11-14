@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.bc.upgrade.R;
 import com.bc.upgrade.cons.Constant;
@@ -23,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
         mUpgradeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Toast.makeText(MainActivity.this, "启动下载任务...", Toast.LENGTH_SHORT).show();
+
                 Intent intent = new Intent(MainActivity.this, DownloadService.class);
                 intent.putExtra(Constant.APK_DOWNLOAD_URL, Constant.URL);
                 startService(intent);
